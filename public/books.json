@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "https://imgur.com/q1O6nEu.png",
+      "review": "Austen's timeless romance explores themes of class, marriage, and societal expectations with wit and charm.",
+      "totalPages": 279,
+      "rating": 4.6,
+      "category": "Romance",
+      "tags": ["Regency", "Social Commentary"],
+      "publisher": "T. Egerton, Whitehall",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": 2,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://imgur.com/501bzyx.png",
+      "review": "A timeless classic, Holden Caulfield's journey through adolescence resonates with readers of all ages.",
+      "totalPages": 277,
+      "rating": 4.2,
+      "category": "Fiction",
+      "tags": ["Coming-of-age", "Classic"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 3,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://imgur.com/Xqa5ZsB.png",
+      "review": "Fitzgerald's masterpiece captures the essence of the Jazz Age, weaving a tragic tale of love and ambition.",
+      "totalPages": 218,
+      "rating": 4.5,
+      "category": "Classic",
+      "tags": ["Romance", "Tragedy"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 4,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://imgur.com/b4BkVKi.png",
+      "review": "A dystopian classic that explores the dangers of totalitarianism, Orwell's vision of the future remains chillingly relevant.",
+      "totalPages": 328,
+      "rating": 4.8,
+      "category": "Science Fiction",
+      "tags": ["Dystopian", "Political"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 5,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://imgur.com/Twl2QtK.png",
+      "review": "Lee's poignant narrative challenges societal norms and prejudices, leaving a lasting impact on readers.",
+      "totalPages": 324,
+      "rating": 4.7,
+      "category": "Fiction",
+      "tags": ["Social Justice", "Southern Gothic"],
+      "publisher": "J.B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 6,
+      "bookName": "Harry Potter and the Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "image": "https://imgur.com/HdtoKl5.png",
+      "review": "Rowling's magical tale of friendship and bravery enchanted readers worldwide, sparking a cultural phenomenon.",
+      "totalPages": 309,
+      "rating": 4.9,
+      "category": "Fantasy",
+      "tags": ["Magic", "Adventure"],
+      "publisher": "Bloomsbury",
+      "yearOfPublishing": 1997
+    }
+  ]
+  
