@@ -50,12 +50,12 @@ const ListedBooks = () => {
   return (
     <div className="container mx-auto">
       <div className="mt-9 bg-[#1313130D] h-24 flex items-center justify-center rounded-2xl mb-8">
-        <h2>Books</h2>
+        <h2 className="font-bold text-3xl">Books</h2>
       </div>
 
       <div className="flex justify-center">
         <details className="dropdown mb-14">
-          <summary className="m-1 btn">Sort By <GoChevronDown className="text-xl" /></summary>
+          <summary className="m-1 btn bg-[#23BE0A] text-white">Sort By <GoChevronDown className="text-xl" /></summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li>
               <a>Rating</a>

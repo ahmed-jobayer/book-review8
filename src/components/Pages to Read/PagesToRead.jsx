@@ -36,7 +36,7 @@ const PagesToRead = () => {
     <div className="container mx-auto mt-9 py-28 px-24">
       <BarChart width={1000} height={400} data={readListedBooks}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={"bookName"}></XAxis>
+        <XAxis className="text-[#1313137F]" dataKey={"bookName"}></XAxis>
         <YAxis dataKey={""}></YAxis>
         <Bar dataKey={"totalPages"} fill="#82ca9d" />
       </BarChart>

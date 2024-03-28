@@ -9,13 +9,13 @@ const Book = ({ book }) => {
         <figure>
           <img src={image} alt={bookName} />
         </figure>
-        <div className="flex gap-11 mt-8 ">
-          <p>{tags[0]}</p>
-          <p>{tags[1]}</p>
+        <div className="flex gap-11 mt-8 font-medium text-[#23BE0A] ">
+          <p>#{tags[0]}</p>
+          <p>#{tags[1]}</p>
         </div>
-        <h2 className="my-4">{bookName}</h2>
-        <p className="mb-5">By : {author}</p>
-        <div className="flex justify-between pt-5 border-t border-dashed">
+        <h2 className="my-4 font-bold text-2xl">{bookName}</h2>
+        <p className="mb-5 text-[#131313CC] font-medium">By : {author}</p>
+        <div className="flex justify-between pt-5 border-t border-dashed text-[#131313CC] font-medium">
           <p>{category}</p>
           <p className="flex items-center gap-2">
             {rating}

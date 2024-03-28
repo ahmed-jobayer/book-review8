@@ -14,7 +14,7 @@ const BookSection = () => {
   return(
     <div className="mt-24">
         <div className="text-center mb-10">
-            <h2>Books</h2>
+            <h2 className="font-bold text-4xl">Books</h2>
         </div>
     <div className="grid lg:grid-cols-3 gap-6">
       {

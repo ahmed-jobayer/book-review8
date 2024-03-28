@@ -1,13 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 
+
+
 const Header = () => {
  
   const links = (
     <>
-      <li className="text-[#23BE0A] border border-[#23BE0A] rounded-2xl"><NavLink to="/">Home</NavLink></li>
-      <li className="mx-4 text-[#23BE0A] border border-[#23BE0A] rounded-2xl"><NavLink to="/listedBooks">Listed Books</NavLink></li>
-      <li className="text-[#23BE0A] border border-[#23BE0A] rounded-2xl"><NavLink to="/pagesToRead">Pages to Read</NavLink></li>
+      <li className="text-[#23BE0A] border border-[#23BE0A] rounded-2xl text-xl font-semibold"><NavLink to="/">Home</NavLink></li>
+      <li className="mx-4 text-[#23BE0A] border border-[#23BE0A] rounded-2xl text-xl font-semibold"><NavLink to="/listedBooks">Listed Books</NavLink></li>
+      <li className="text-[#23BE0A] border border-[#23BE0A] rounded-2xl text-xl font-semibold"><NavLink to="/pagesToRead">Pages to Read</NavLink></li>
     </>
   );
   return (
@@ -21,14 +23,14 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">{links}</ul>
         </div>
-        <Link className="text-xl work-sans"> Book Vibe</Link>
+        <Link className="text-3xl font-bold "> Book Vibe</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn mr-4 bg-[#23BE0A] ">Sign In</a>
-        <a className="btn">Sign Up</a>
+        <a className="btn mr-4 bg-[#23BE0A] text-white ">Sign In</a>
+        <a className="btn text-white bg-[#59C6D2]">Sign Up</a>
       </div>
     </div>
   );
