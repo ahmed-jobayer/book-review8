@@ -14,7 +14,7 @@ const BooksThatListed = ({book}) => {
         totalPages,
         rating
       } = book;
-      console.log(book)
+    //   console.log(book)
   return (
     <div className="card lg:card-side bg-base-100 p-6 border my-6">
       <div className=" rounded-2xl py-7 px-12 border flex justify-center items-center">

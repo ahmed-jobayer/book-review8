@@ -2,6 +2,8 @@ import { GoChevronDown } from "react-icons/go";
 import BooksThatListed from "../Books That Listed/BooksThatListed";
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import {
   getStoredReadedBooks,
   getStoredWishlistBooks,
@@ -10,7 +12,7 @@ import BooksThatWishisted from "../Books That Wishisted/BooksThatWishisted";
 
 const ListedBooks = () => {
   const books = useLoaderData();
-
+  // console.log(books);
   const [readListedBooks, setReadListedBooks] = useState([]);
   const [readWishlistedBooks, setReadWishlistedBooks] = useState([]);
 
@@ -19,7 +21,8 @@ const ListedBooks = () => {
     if (books.length > 0) {
       const readedBooks = [];
       for (const bookId of storedBookIds) {
-        const book = books.find(book => book.bookId === bookId);
+        // console.log(books);
+        const book = books.find((book) => book.bookId === bookId);
         if (book) {
           readedBooks.push(book);
         }
@@ -27,13 +30,14 @@ const ListedBooks = () => {
         setReadListedBooks(readedBooks);
       }
     }
-  }, []);
+  }, [books]);
   useEffect(() => {
     const storedWishBookIds = getStoredWishlistBooks();
     if (books.length > 0) {
       const wishedBooks = [];
       for (const bookId of storedWishBookIds) {
-        const book = books.find(book => book.bookId === bookId);
+        console.log(books);
+        const book = books.find((book) => book.bookId === bookId);
         if (book) {
           wishedBooks.push(book);
         }
@@ -41,39 +45,55 @@ const ListedBooks = () => {
         setReadWishlistedBooks(wishedBooks);
       }
     }
-  }, []);
+  }, [books]);
 
   return (
     <div className="container mx-auto">
       <div className="mt-9 bg-[#1313130D] h-24 flex items-center justify-center rounded-2xl mb-8">
         <h2>Books</h2>
       </div>
+
       <div className="flex justify-center">
-        <button className="btn mb-14">
-          Short By
-          <GoChevronDown className="text-xl" />
-        </button>
+        <details className="dropdown mb-14">
+          <summary className="m-1 btn">Sort By <GoChevronDown className="text-xl" /></summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li>
+              <a>Rating</a>
+            </li>
+            <li>
+              <a>Number of pages</a>
+            </li>
+            <li>
+              <a>Publisher year</a>
+            </li>
+          </ul>
+        </details>
       </div>
-      <div className="flex">
-        <h1 className="p-4 border-t border-x">Read Books</h1>
-        <h1 className="p-4 border-b">Wishlist Books</h1>
-        <p className="border-b grow"></p>
-      </div>
-      <div className="mt-2">
-        {readListedBooks.map(book => (
-          <BooksThatListed 
-          key={book.bookId} 
-          book={book}></BooksThatListed>
-        ))}
-      </div>
-      <div className="mt-2">
-        {readWishlistedBooks.map(book => (
-          <BooksThatWishisted
-            key={book.bookId}
-            book={book}
-          ></BooksThatWishisted>
-        ))}
-      </div>
+
+      <Tabs>
+        <TabList>
+          <Tab>Read Books</Tab>
+          <Tab>Wishlist Books</Tab>
+        </TabList>
+
+        <TabPanel>
+          <div className="mt-2">
+            {readListedBooks.map((book) => (
+              <BooksThatListed key={book.bookId} book={book}></BooksThatListed>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="mt-2">
+            {readWishlistedBooks.map((book) => (
+              <BooksThatWishisted
+                key={book.bookId}
+                book={book}
+              ></BooksThatWishisted>
+            ))}
+          </div>
+        </TabPanel>
+      </Tabs>
     </div>
   );
 };
