@@ -1,7 +1,13 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { saveReadedBooks, saveWishlistBooks } from "../../Utility/LocalStorage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  getStoredReadedBooks,
+  getStoredWishlistBooks,
+  saveReadedBooks,
+  saveWishlistBooks,
+} from "../../Utility/LocalStorage";
+
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -23,14 +29,29 @@ const BookDetails = () => {
   } = book;
 
   const handleAddToReadList = () => {
-    saveReadedBooks(intBookId)
-    toast('This Book Is Added to Your Reading List')
-  }
+    const storedBookIds = getStoredReadedBooks();
+
+    if (storedBookIds.includes(intBookId)) {
+      toast.warn("This Book is already in your Reading List");
+    } else {
+      saveReadedBooks(intBookId);
+      toast.success("This Book is added to your Reading List");
+    }
+  };
+  
 
   const handleAddToWishlist = () => {
-    saveWishlistBooks(intBookId)
-    toast('This Book Is Added to Your Wishlist')
-  }
+    const storedBookIds = getStoredReadedBooks();
+    const storedWishBookIds = getStoredWishlistBooks();
+    if (storedBookIds.includes(intBookId)) {
+      toast.warn("This Book Is in Your Reading List, Now You Can't Add This to your Wishlist");
+    }else if (storedWishBookIds.includes(intBookId) ) {
+      toast.warn("This Book is already in your Wishlist");
+    } else {
+      saveWishlistBooks(intBookId);
+    toast.success("This Book Is Added to Your Wishlist");
+    }
+  };
 
   return (
     <div className="container mx-auto my-16 lg:flex ">
@@ -71,8 +92,12 @@ const BookDetails = () => {
               </tr>
             </tbody>
           </table>
-          <button onClick={handleAddToReadList} className="btn mr-4">Read</button>
-          <button onClick={handleAddToWishlist} className="btn">Wishlist</button>
+          <button onClick={handleAddToReadList} className="btn mr-4">
+            Read
+          </button>
+          <button onClick={handleAddToWishlist} className="btn">
+            Wishlist
+          </button>
         </div>
       </div>
       <ToastContainer />

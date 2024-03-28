@@ -19,7 +19,7 @@ const ListedBooks = () => {
     if (books.length > 0) {
       const readedBooks = [];
       for (const bookId of storedBookIds) {
-        const book = books.find((book) => book.bookId === bookId);
+        const book = books.find(book => book.bookId === bookId);
         if (book) {
           readedBooks.push(book);
         }
@@ -33,7 +33,7 @@ const ListedBooks = () => {
     if (books.length > 0) {
       const wishedBooks = [];
       for (const bookId of storedWishBookIds) {
-        const book = books.find((book) => book.bookId === bookId);
+        const book = books.find(book => book.bookId === bookId);
         if (book) {
           wishedBooks.push(book);
         }
@@ -60,14 +60,14 @@ const ListedBooks = () => {
         <p className="border-b grow"></p>
       </div>
       <div className="mt-2">
-        {readListedBooks.map((book) => (
+        {readListedBooks.map(book => (
           <BooksThatListed 
           key={book.bookId} 
           book={book}></BooksThatListed>
         ))}
       </div>
       <div className="mt-2">
-        {readWishlistedBooks.map((book) => (
+        {readWishlistedBooks.map(book => (
           <BooksThatWishisted
             key={book.bookId}
             book={book}
