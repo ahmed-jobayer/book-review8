@@ -23,12 +23,12 @@ const BookDetails = () => {
   } = book;
 
   const handleAddToReadList = () => {
-    saveReadedBooks(bookId)
+    saveReadedBooks(intBookId)
     toast('This Book Is Added to Your Reading List')
   }
 
   const handleAddToWishlist = () => {
-    saveWishlistBooks(bookId)
+    saveWishlistBooks(intBookId)
     toast('This Book Is Added to Your Wishlist')
   }
 

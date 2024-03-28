@@ -2,7 +2,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoMdPeople } from "react-icons/io";
 import { GiPapers } from "react-icons/gi";
 import { Link } from "react-router-dom";
-const BooksThatListed = ({book}) => {
+const BooksThatWishisted = ({book}) => {
     const {
         bookId,
         image,
@@ -56,4 +56,4 @@ const BooksThatListed = ({book}) => {
   );
 };
 
-export default BooksThatListed;
+export default BooksThatWishisted;
